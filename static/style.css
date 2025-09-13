@@ -1,0 +1,4 @@
+body { min-height: 100vh; }
+.metric .display-6 { letter-spacing: -0.02em; }
+.card { border-radius: 1rem; }
+textarea { resize: vertical; }
