@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card shadow border-0 rounded-3">
+      <div class="card-header bg-light border-0 py-3">
+        <h1 class="h4 mb-0">🌱 Quick Wellbeing Survey</h1>
+        <p class="text-secondary small mb-0">Takes less than 20 seconds · Be honest with yourself</p>
+      </div>
+
+      <div class="card-body p-4">
+        <form action="{{ url_for('submit') }}" method="POST" class="row g-4">
+
+          <!-- Stress -->
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">😣 Stress Level</label>
+            <input type="number" name="stress" min="1" max="10" class="form-control form-control-lg rounded-pill text-center" placeholder="1-10" required>
+          </div>
+
+          <!-- Workload -->
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">📈 Workload</label>
+            <input type="number" name="workload" min="1" max="10" class="form-control form-control-lg rounded-pill text-center" placeholder="1-10" required>
+          </div>
+
+          <!-- Satisfaction -->
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">😊 Job Satisfaction</label>
+            <input type="number" name="satisfaction" min="1" max="10" class="form-control form-control-lg rounded-pill text-center" placeholder="1-10" required>
+          </div>
+
+          <!-- Notes -->
+          <div class="col-12">
+            <label class="form-label fw-semibold">📝 Notes (optional)</label>
+            <textarea name="notes" rows="3" class="form-control rounded-3" placeholder="Anything you'd like to add..."></textarea>
+          </div>
+
+          <!-- Submit -->
+          <div class="col-12 d-flex justify-content-end">
+            <button class="btn btn-success btn-lg px-4 rounded-pill shadow-sm">
+              ✅ Submit Response
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Dashboard Link -->
+    <div class="text-center mt-4">
+      <a href="{{ url_for('dashboard') }}" class="btn btn-outline-primary btn-lg rounded-pill px-4">
+        📊 View Dashboard
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
